@@ -1,0 +1,51 @@
+* { transform-style: preserve-3d; }
+
+:root {
+    --just-testing-github-pages: 1;
+    --cube-size: 12.5rem;
+    --speed: 10s
+}
+body {
+    display: grid;
+    perspective: calc(var(--cube-size)*4);
+    background-color: #111;
+    place-items: center;
+}
+.cube {
+    position: relative;
+    width: var(--cube-size);
+    aspect-ratio: 1;
+    animation: rotate var(--speed) infinite linear;
+    --negative: calc(var(--cube-size)/-2);
+    --positive: calc(var(--cube-size)/2);
+    > * {
+        position: absolute;
+        inset: 0;
+        background-color: #fff;
+        opacity: 0.6;
+        box-shadow: 0 0 4px 0px inset black;
+        &:nth-child(1) {
+            transform: translateZ(var(--negative));
+        }
+        &:nth-child(2) {
+            transform: translateZ(var(--positive)) ;
+        }
+        &:nth-child(3) {
+            transform: translateX(var(--negative)) rotateY(90deg);
+        }
+        &:nth-child(4) {
+            transform: translateX(var(--positive)) rotateY(90deg);
+        }
+        &:nth-child(5) {
+            transform: translateY(var(--negative)) rotateX(90deg);
+        }
+        &:nth-child(6) {
+            transform: translateY(var(--positive)) rotateX(90deg);
+        }
+    }
+}
+@keyframes rotate {
+    to {
+        transform: rotateY(360deg) rotateZ(360deg);
+    }
+}

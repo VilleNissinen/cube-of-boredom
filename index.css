@@ -5,6 +5,10 @@
     --cube-size: 12.5rem;
     --speed: 10s
 }
+html, body {
+    height: 100%;
+    margin: 0;
+}
 body {
     display: grid;
     perspective: calc(var(--cube-size)*4);

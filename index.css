@@ -29,6 +29,7 @@ body {
         --positive: calc(var(--cube-size)*2);
         transition-duration: 2s;
      }
+    }
     > * {
         position: absolute;
         inset: 0;

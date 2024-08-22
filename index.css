@@ -3,8 +3,8 @@
 
 :root {
     --just-testing-github-pages: 1;
-    --cube-size: 12.5rem;
-    --speed: 10s
+    --cube-size: 6rem;
+    --speed: 10s;
 }
 html, body {
     height: 100%;
@@ -15,6 +15,7 @@ body {
     perspective: calc(var(--cube-size)*4);
     background-color: #111;
     place-items: center;
+    overflow: hidden;
 }
 .cube {
     position: relative;
@@ -23,12 +24,18 @@ body {
     animation: rotate var(--speed) infinite linear;
     --negative: calc(var(--cube-size)/-2);
     --positive: calc(var(--cube-size)/2);
+    &:active > * {
+        --negative: calc(var(--cube-size)*-2);
+        --positive: calc(var(--cube-size)*2);
+        transition-duration: 2s;
+    }
     > * {
         position: absolute;
         inset: 0;
         background-color: #fff;
         opacity: 0.6;
         box-shadow: 0 0 4px 0px inset black;
+        transition: transform 1s ease-in-out;
         &:nth-child(1) {
             transform: translateZ(var(--negative));
         }

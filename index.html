@@ -4,19 +4,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./index.css?v1.0.1">
+    <link rel="stylesheet" href="./index.css?v1.0.2">
     <title>Cube of boredom</title>
 </head>
 
 <body>
     <div class="cube">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
+        <canvas id="1"></canvas>
+        <canvas id="2"></canvas>
+        <canvas id="3"></canvas>
+        <canvas id="4"></canvas>
+        <canvas id="5"></canvas>
+        <canvas id="6"></canvas>
     </div>
+    <script type="module" src="index.js?v1.0.0"></script>
+    <aside>
+        <label for="face-textures">Choose a texture:</label>
+        <select id="face-textures" name="choice">
+            <option value="default" selected>Default</option>
+            <option value="game-of-life">Conway's Game of Life</option>
+        </select>
+    </aside>
 </body>
 
 </html>
